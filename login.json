@@ -11676,13 +11676,18 @@
         {
           "senderKeyId": 1744010912,
           "senderChainKey": {
-            "iteration": 13,
-            "seed": "mVu03/P4sCIiGDH9s9EcJazDpEpCv2ONbuwLS9dQOew="
+            "iteration": 19,
+            "seed": "KyrEylc7PMV/uT9vfNnlxwOG9wx+sSnUCex+GTSqbZI="
           },
           "senderSigningKey": {
             "public": "BfghTztZDlvZBiCbiJ54p2mRQO8K6qAgWMHbxgQERGtL"
           },
-          "senderMessageKeys": []
+          "senderMessageKeys": [
+            {},
+            {},
+            {},
+            {}
+          ]
         }
       ],
       "120363023276189037@g.us::6281977330481:67::0": [

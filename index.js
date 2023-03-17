@@ -8,7 +8,7 @@ const { Configuration, OpenAIApi } = require("openai");
 const { generate } = require('qrcode-terminal');
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 //Fungsi OpenAI ChatGPT untuk Mendapatkan Respon
