@@ -97,10 +97,23 @@ async function connectToWhatsApp(){
                     if(!isMessageFromGroup && incomingMessages.includes('/menu')){
                         await sock.sendMessage(
                             senderNumber,
-                            {text: "*Yohanes Oktanio BOT (tested)*\n mention/tag saya dan tanya apapun untuk activasi chat gpt \n\n _sekian terimakasih_ "},
+                            {text: "*Yohanes Oktanio BOT (tested)*\n akhiri apapun dengan tanda tanya \n\n _sekian terimakasih_ "},
                             {quoted: messages[0]},
                             2000
                         )
+                    }
+                      if(!isMessageFromGroup && !incomingMessages.includes('?')){
+                       async function main(){
+                        const result = await generateResponse(incomingMessages)
+                        console.log(result)
+                        await sock.sendMessage(
+                            senderNumber,
+                            {text: result + '\n\n _YohanesOktanio | bot_'},
+                            {quoted: messages[0]},
+                            2000
+                        )
+                       }
+                       main()
                     }
 
 
