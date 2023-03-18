@@ -102,7 +102,7 @@ async function connectToWhatsApp(){
                             2000
                         )
                     }
-                    }
+
 
 
             }
