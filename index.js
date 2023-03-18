@@ -61,9 +61,9 @@ async function connectToWhatsApp(){
                  const senderNumber = messages[0].key.remoteJid
 
                  //dapatkan pesan
-                 let incomingMessages  = messages[0].message.conversation
+                    let incomingMessages  = messages[0].message.conversation
                  if (incomingMessages === "") {
-                    incomingMessages = messages[0].message.extendedTextMessage.text;
+                        incomingMessages = messages[0].message.extendedTextMessage.text;
                 }
                 const isMessageFromGroup = senderNumber.includes('@g.us')
                 const isMessageMentionBoot = incomingMessages.includes("@6281977330481")
@@ -89,10 +89,19 @@ async function connectToWhatsApp(){
                     if(isMessageMentionBoot && incomingMessages.includes('/menu')){
                         await sock.sendMessage(
                             senderNumber,
-                            {text: "*Yohanes Oktanio BOT*\n ~ mention saya dan tanya apapun untuk activasi chat gpt \n _sekian terimakasih_ "},
+                            {text: "*Yohanes Oktanio BOT*\n ~ mention saya dan tanya apapun untuk activasi chat gpt \n\n _sekian terimakasih_ "},
                             {quoted: messages[0]},
                             2000
                         )
+                    }
+                    if(!isMessageFromGroup && incomingMessages.includes('/menu')){
+                        await sock.sendMessage(
+                            senderNumber,
+                            {text: "*Yohanes Oktanio BOT (tested)*\n mention/tag saya dan tanya apapun untuk activasi chat gpt \n\n _sekian terimakasih_ "},
+                            {quoted: messages[0]},
+                            2000
+                        )
+                    }
                     }
 
 
