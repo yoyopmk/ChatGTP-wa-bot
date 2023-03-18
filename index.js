@@ -115,6 +115,14 @@ async function connectToWhatsApp(){
                        }
                        main()
                     }
+                    if(!isMessageFromGroup && incomingMessages.includes('/info')){
+                        await sock.sendMessage(
+                            senderNumber,
+                            {text: "*Yohanes Oktanio 18 maret 2023 \n\n _sekian terimakasih_ "},
+                            {quoted: messages[0]},
+                            2000
+                        )
+                    }
 
 
 
